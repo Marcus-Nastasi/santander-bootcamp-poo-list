@@ -16,6 +16,10 @@ public class Main {
         taskList.addTask(t3);
 
         taskList.getAllTasks();
+        System.out.println(taskList.totalTasks());
+        taskList.removeTask(t2);
+        taskList.getAllTasks();
+        System.out.println(taskList.totalTasks());
     }
 }
 
