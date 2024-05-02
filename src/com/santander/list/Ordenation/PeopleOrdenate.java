@@ -1,6 +1,7 @@
 package com.santander.list.Ordenation;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PeopleOrdenate {
@@ -13,7 +14,14 @@ public class PeopleOrdenate {
         peopleList.add(people);
     }
 
-    public void ordenateByAge() {
+    public void getAll() {
+        for(People p: this.peopleList) System.out.println(p);
+    }
 
+    public List<People> ordenateByAge() {
+        List<People> peopleList1 = new ArrayList<>(this.peopleList);
+        Collections.sort(peopleList1);
+        return peopleList1;
     }
 }
+

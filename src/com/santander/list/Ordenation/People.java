@@ -1,41 +1,32 @@
 package com.santander.list.Ordenation;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class People {
+public class People implements Comparable<People> {
 
     private String name;
     private String cpf;
     private Date bornAt;
+    private final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    public People(String name, String cpf, Date bornAt) {
+    public People(String name, String cpf, String bornAt) throws ParseException {
         this.name = name;
         this.cpf = cpf;
-        this.bornAt = bornAt;
+        this.bornAt = sdf.parse(bornAt);
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
     public Date getBornAt() {
         return bornAt;
-    }
-
-    public void setBornAt(Date bornAt) {
-        this.bornAt = bornAt;
     }
 
     @Override
@@ -43,8 +34,13 @@ public class People {
         return(
             "People{" + "name='" + name + '\'' +
             ", cpf='" + cpf + '\'' +
-            ", bornAt=" + bornAt + '}'
+            ", bornAt=" + sdf.format(bornAt) + '}'
         );
+    }
+
+    @Override
+    public int compareTo(People p) {
+        return this.bornAt.compareTo(p.getBornAt());
     }
 }
 

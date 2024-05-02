@@ -4,6 +4,8 @@ import com.santander.list.Library.Book;
 import com.santander.list.Library.BooksCollection;
 import com.santander.list.OpBasics.Task;
 import com.santander.list.OpBasics.TaskList;
+import com.santander.list.Ordenation.People;
+import com.santander.list.Ordenation.PeopleOrdenate;
 
 import java.text.ParseException;
 
@@ -34,14 +36,25 @@ public class Main {
             BooksCollection booksCollection = new BooksCollection();
             booksCollection.addBook(book);
             booksCollection.addBook(book2);
-
             booksCollection.getAllBooks();
-
             booksCollection.searchByAuthor("J. J. Wizard");
 
             System.out.println("----- books by years ------");
-
             booksCollection.searchByYearsInterval("01/01/2009", "11/12/2010");
+
+            System.out.println("\n------ People --------\n");
+            People p1 = new People("Marcus", "12345828", "26/10/2001");
+            People p2 = new People("Maria", "232323232", "10/01/2004");
+            People p3 = new People("João", "422443423423", "25/04/1995");
+
+            PeopleOrdenate po = new PeopleOrdenate();
+            po.addPeople(p1);
+            po.addPeople(p2);
+            po.addPeople(p3);
+
+            for(People p: po.ordenateByAge()) {
+                System.out.println(p);
+            }
         } catch (ParseException e) {
             System.err.println(e.getMessage());
         }
