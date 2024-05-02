@@ -21,13 +21,14 @@ public class Main {
         taskList.addTask(t2);
         taskList.addTask(t3);
 
+        System.out.println("---- Tasks -----");
         taskList.getAllTasks();
         System.out.println(taskList.totalTasks());
         taskList.removeTask(t2);
         taskList.getAllTasks();
         System.out.println(taskList.totalTasks());
 
-        System.out.println("------ Book --------");
+        System.out.println("\n------ Book --------");
 
         try {
             Book book = new Book("J. J. Wizard", "Wonderful world", "Jasmin", "12/12/2010");
@@ -39,10 +40,10 @@ public class Main {
             booksCollection.getAllBooks();
             booksCollection.searchByAuthor("J. J. Wizard");
 
-            System.out.println("----- books by years ------");
+            System.out.println("\n----- books by years ------");
             booksCollection.searchByYearsInterval("01/01/2009", "11/12/2010");
 
-            System.out.println("\n------ People --------\n");
+            System.out.println("\n------ People --------");
             People p1 = new People("Marcus", "12345828", "26/10/2001");
             People p2 = new People("Maria", "232323232", "10/01/2004");
             People p3 = new People("João", "422443423423", "25/04/1995");
@@ -52,9 +53,11 @@ public class Main {
             po.addPeople(p2);
             po.addPeople(p3);
 
-            for(People p: po.ordenateByAge()) {
-                System.out.println(p);
-            }
+            System.out.println("\nDesordered list");
+            po.getAll();
+
+            System.out.println("\nOrdered list by age");
+            for(People p: po.ordenateByAge()) System.out.println(p);
         } catch (ParseException e) {
             System.err.println(e.getMessage());
         }
