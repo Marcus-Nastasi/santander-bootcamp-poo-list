@@ -19,6 +19,18 @@ public class TaskList {
         Task t = new Task(description);
         tasks.add(t);
     }
+
+    public void removeTask(Task task) {
+        this.tasks.remove(task);
+    }
+
+    public int totalTasks() {
+        return this.tasks.size();
+    }
+
+    public void getAllTasks() {
+        for(Task d: this.tasks) System.out.println(d.getDescription());
+    }
 }
 
 
