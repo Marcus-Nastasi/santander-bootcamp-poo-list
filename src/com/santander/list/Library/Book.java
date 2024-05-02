@@ -53,12 +53,12 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" +
-            "author='" + author + '\'' +
+        return(
+            "Book{" + "author='" + author + '\'' +
             ", name='" + name + '\'' +
             ", publisher='" + publisher + '\'' +
-            ", publicationDate=" + sdf.format(publicationDate) +
-            '}';
+            ", publicationDate=" + sdf.format(publicationDate) + '}'
+        );
     }
 }
 
