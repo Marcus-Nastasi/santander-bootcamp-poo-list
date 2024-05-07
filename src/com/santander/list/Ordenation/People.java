@@ -6,9 +6,9 @@ import java.util.Date;
 
 public class People implements Comparable<People> {
 
-    private String name;
-    private String cpf;
-    private Date bornAt;
+    private final String name;
+    private final String cpf;
+    private final Date bornAt;
     private final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
     public People(String name, String cpf, String bornAt) throws ParseException {
