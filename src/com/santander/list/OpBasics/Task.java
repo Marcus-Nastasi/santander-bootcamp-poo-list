@@ -2,7 +2,7 @@ package com.santander.list.OpBasics;
 
 public class Task {
 
-    private String description;
+    private final String description;
 
     public Task(String description) {
         this.description = description;
@@ -10,10 +10,6 @@ public class Task {
 
     public String getDescription() {
         return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 }
 
