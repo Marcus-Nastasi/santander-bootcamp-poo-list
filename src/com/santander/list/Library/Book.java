@@ -6,10 +6,10 @@ import java.util.Date;
 
 public class Book {
 
-    private String author;
-    private String name;
-    private String publisher;
-    private Date publicationDate;
+    private final String author;
+    private final String name;
+    private final String publisher;
+    private final Date publicationDate;
     private final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
     public Book(String author, String name, String publisher, String publicationDate) throws ParseException {
@@ -23,32 +23,16 @@ public class Book {
         return author;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getPublisher() {
         return publisher;
     }
 
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
-
     public Date getPublicationDate() {
         return publicationDate;
-    }
-
-    public void setPublicationDate(Date publicationDate) {
-        this.publicationDate = publicationDate;
     }
 
     @Override
